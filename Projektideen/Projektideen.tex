@@ -1,0 +1,149 @@
+\documentclass{article}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	%total={170mm,257mm},
+	left=20mm,
+	top=30mm,
+}
+
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{mdframed}
+\usepackage{listings} % Include the listings package
+\usepackage{xcolor}   % to define your own colors
+\usepackage{subcaption}
+
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+
+\newmdenv[
+linecolor=blue, % Color of the border line
+backgroundcolor=gray!20, % Background color; "gray!20" means "20% gray"
+frametitle=Note, % Title of the frame, delete this line if you don't want a title
+skipabove=\baselineskip, % Space above the frame
+skipbelow=\baselineskip, % Space below the frame
+]{mynote}
+
+% code-snippets:
+% Define the color styles you wish to use in the document for the Python syntax highlighting
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+	commentstyle=\color{green},
+	keywordstyle=\color{blue},
+	numberstyle=\tiny\color{gray},
+	stringstyle=\color{red},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+\definecolor{LightGray}{gray}{0.9}
+
+\lstset{style=mystyle} % Apply your style globally to the document
+
+
+\newcommand{\LVA}{Projekt}
+\newcommand{\LVAKURZ}{PRO3}
+\newcommand{\SEMESTER}{WS 2023/2024}
+\newcommand{\UELABEL}{}
+\newcommand{\UETITLE}{Projektideen}
+\newcommand{\AUTHOR}{Jakob Mayr, Lukas Kaiser, Jonas Pfeiffer}
+
+
+\title{\vspace{5cm} \LVA\ (\LVAKURZ)\\ \vspace{1cm} \textbf{\UETITLE} \vspace{2.5cm}}
+\author{\AUTHOR}
+\date{\SEMESTER}
+
+\begin{document}
+	
+	\pagestyle{fancy}
+	
+	\maketitle
+	
+	\tikz [remember picture, overlay] %
+	\node [shift={(3.7cm,-4cm)}] at (current page.north west) %
+	[anchor=north west] %
+	{\includegraphics{fhooe_logo.jpg}};
+	
+	\tikz [remember picture, overlay] %
+	\node [shift={(10cm,-4.8cm)}] at (current page.north west) %
+	[anchor=north west] %
+	{\includegraphics{si_logo.jpg}};
+	
+	%\tikz [remember picture, overlay] %
+	%\node [shift={(7.2cm,-11.65cm)}] at (current page.north west) %
+	%[anchor=north west] %
+	%{\includegraphics[scale=0.12]{./img/star_wars_logo_no_background.png}};
+	%
+	%\pagebreak
+	
+	\fancyhf{}
+	\fancyhead[L]{\LVA\ (\LVAKURZ)}
+	\fancyhead[C]{\UELABEL}
+	\fancyhead[R]{\SEMESTER}
+	\fancyfoot[L]{Seite \thepage\ von \pageref{LastPage}}
+	\fancyfoot[R]{\AUTHOR}
+	
+	\section*{Projektideen}
+	\begin{enumerate}
+		\item \textbf{Security Audit of a Small Business or University System}: Conduct a thorough security audit of a small business's or your university's IT infrastructure. This could involve vulnerability scanning, assessing the effectiveness of existing security measures, and providing recommendations for improvements.\\
+		\item \textbf{Cybersecurity Training Game or Application}: Develop an interactive game or application that teaches basic cybersecurity concepts to users, such as password security, safe browsing habits, and understanding of common cyber threats.\\
+		\item \textbf{Incident Response Drill}: Plan and execute a simulated cybersecurity incident for your university's IT infrastructure, followed by a thorough incident response that includes identifying the breach, containing it, and recovering from it.
+		
+		\pagebreak
+		
+		\item \textbf{Homelab-Security-Infrastructure}:
+		\subsection*{Goal}
+		
+		To build a scalable and secure home-lab environment that can onboard client systems (both Linux and Windows) and provide critical cybersecurity services like WAF and SIEM.\\
+		
+		\subsection*{Project Phases}
+		\begin{enumerate}
+			\item \textbf{Planning and Design:}\\
+			Define Objectives: Clearly outline what you want to achieve with each service (WAF, SIEM, etc.).
+			Infrastructure Design: Plan the network architecture, including the placement of services, segmentation, and how clients will be onboarded.
+			Tool Selection: Choose the appropriate tools and software (e.g., Splunk for SIEM, and a suitable WAF solution).
+			\item \textbf{Setting Up the Infrastructure:}\\
+			Hardware and Software Setup: Acquire necessary hardware and install required software. This may include virtualization solutions for creating different client environments.
+			Network Configuration: Set up the network, ensuring proper segmentation and security measures are in place.
+			\item \textbf{Service Implementation:}\\
+			WAF Setup: Install and configure the WAF to protect web applications from common threats and attacks.
+			SIEM Implementation: Deploy a SIEM solution like Splunk, configure it to collect logs from various sources, and set up dashboards for monitoring.
+			\item \textbf{Onboarding Clients:}\\
+			Client Preparation: Prepare Linux and Windows systems with necessary configurations for onboarding.
+			Integration: Integrate these client systems into the home-lab, ensuring they are properly communicating with the WAF and SIEM services.
+			\item \textbf{Testing and Optimization:}\\
+			Functionality Testing: Test the services for basic functionality and performance.
+			Security Testing: Conduct vulnerability assessments and penetration testing to identify and rectify security gaps.
+			Optimization: Fine-tune the services based on the test results for optimal performance and security.
+			\item \textbf{Documentation and Reporting:}\\
+			System Documentation: Create comprehensive documentation of the setup, configurations, and procedures.
+			Findings and Recommendations: Document the findings from testing and provide recommendations for improvements.
+			\item \textbf{Presentation:}\\
+			Final Presentation: Prepare a presentation detailing the project’s objectives, implementation, challenges, findings, and learning outcomes.
+			\item \textbf{Considerations:}\\
+			Scalability: Ensure the design allows for easy scaling and addition of more clients or services.
+			Security: Maintain a strong focus on security best practices throughout the project.
+			Budget and Resources: Be mindful of the budget and resources available for the project.
+			\item \textbf{Learning Outcomes:}\\
+			Hands-on experience with WAF and SIEM tools.
+			Understanding of network configuration and client onboarding.
+			Insight into the challenges and considerations of managing cybersecurity services in a network environment.\\
+			This project would not only enhance your technical skills but also give you valuable insights into the operational aspects of cybersecurity services. It's a comprehensive way to apply theoretical knowledge in a practical setting.\\
+		\end{enumerate}		
+	\end{enumerate}
+	\label{LastPage}
+	
+\end{document}
